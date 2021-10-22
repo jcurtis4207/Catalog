@@ -1,0 +1,167 @@
+*{
+    font: 16px sans-serif;
+    color: #EEEEEE;
+}
+body{
+    background: #050505;
+}
+
+/* title box */
+#title-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#title{
+    background:#FFFFFF09;
+    width: 350px;
+    height: 100px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 8px 0px #000000;
+}
+h1{
+    font: 36px "Trebuchet MS";
+    color: #EEEEEE;
+    text-align: center;
+}
+
+/* buttons, dropdowns */
+#heading{
+    width: 50%;
+    height: 80px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: -50px;
+}
+#edit-instructions{
+    position: relative;
+    top: 20px;
+    left: -45px;
+    color: #999999;
+}
+button, select, #submit{
+    background: #95c1f5;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+}
+#add_button{
+    width: 100px;
+    position: relative;
+}
+#genres_dropdown{
+    padding-left: 10px;
+    width: 200px;
+    position: relative;
+    float: right;
+}
+option{
+    color: #121212;
+}
+#form-container{
+    width: 50%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+}
+#book-form{
+    width: 100%;
+}
+#submit{
+    position: relative;
+    top: 20px;
+    left: 50px;
+    padding: 5px 15px;
+}
+#home_button{
+    position:relative;
+    left: 155px;
+    top: -20px;
+    padding: 5px 15px;
+}
+#delete_button{
+    position: relative;
+    left: 145px;
+    top: -20px;
+    padding: 5px 15px;
+}
+
+/* forms */
+input[type=text]{
+    background: #181818;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 15px;
+}
+input[type=text]:focus{
+    border: 2px solid #95c1f5;
+    padding: 5px 13px;
+    border-radius: 4px;
+    outline: none;
+}
+a:link{
+    color: #95c1f5;
+}
+
+/* table */
+#table{
+    margin: auto;
+    width: 95%;
+    padding-top: 140px;
+}
+table{
+    background: #121212;
+}
+table, th, td{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #FFFFFF60;
+}
+th, td{
+    height: 40px;
+    padding: 5px 10px;
+}
+th:nth-child(1), td:nth-child(1){ /* isbn */
+    width: 130px;
+}
+th:nth-child(2), td:nth-child(2){ /* title */
+    width: 600px;
+}
+th:nth-child(3){ /* author */
+    width: 500px;
+}
+th:nth-child(4){ /* lcno */
+    width: 160px;
+}
+th:nth-child(5){ /* year */
+    width: 80px;
+}
+#filled_cell{
+    background: #95c1f5;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+}
+th:nth-child(6){ /* read */
+    width: 40px;
+}
+td:nth-child(6){
+    padding: 0px;
+    margin: 0px;
+}
+th:nth-child(7){ /* genre */
+    width: 150px;
+}
+
+tr:nth-child(even){
+    background: #0f0f0f;
+}

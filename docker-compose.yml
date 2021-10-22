@@ -1,0 +1,11 @@
+version: "3"
+services:
+  catalog:
+    build: .
+    image: jcurtis4207/catalog
+    ports: 
+     - 11080:80
+    ### chown www-data:www-data <path-to-volume>
+    # volumes:
+    #   - <path-to-volume>:/var/www/html/DB
+    container_name: catalog
