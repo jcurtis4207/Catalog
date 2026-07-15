@@ -16,6 +16,7 @@
         </div>
     </div>
     <div id="heading">
+        <div id="row_count">Total: 0</div>
         <button id="add_button" onclick="window.location.href='add_book.php'">Add Book</button>
         <select id="genres_dropdown" onchange="filterGenres()">
             <?php include 'get_genres.php'; ?>
@@ -27,6 +28,11 @@
             <?php include 'fetch_data.php'; ?>
         </table>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            getRowCount();
+        });
+    </script>
     <?php
         if(isset($_SESSION['add_result'])){
             echo '<script language="javascript">';
