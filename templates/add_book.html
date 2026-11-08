@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>Add Book</title>
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="stylesheet" type="text/css" href="style.css?ts=<?=time()?>">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div id="title-container">
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div id="form-container">
-        <form method="POST" action="add_book_backend.php">
+        <form method="POST" action="{{ url_for('process_add_book') }}">
             <table id="book-form">
                 <tr>
                     <td>ISBN</td>
@@ -36,7 +36,7 @@
                     <td><input type="text" name="Year"></td>
                 </tr>
                 <tr>
-                    <td>Read</td>
+                    <td>Unread</td>
                     <td><input type="checkbox" name="Read"></td>
                 </tr>
                 <tr>
@@ -46,7 +46,7 @@
             </table>
             <input type="submit" value="Submit" id="submit">
         </form>
-        <button id="home_button" onclick="window.location.href='index.php'">Return Home</button>
+        <button id="home_button" onclick="window.location.href='/'">Return Home</button>
     </div>
 </body>
 </html>

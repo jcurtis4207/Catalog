@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Library Catalog</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <div id="title-container">
+        <div id="title">
+            <h1>Library Catalog</h1>
+        </div>
+    </div>
+    <div id="heading">
+        <div id="row_count">Total: {{ row_total }}</div>
+        <button id="add_button" onclick="window.location.href='{{ url_for('add_book') }}'">Add Book</button>
+        <select id="genres_dropdown" onchange="filterGenres()">
+            <option value="All">Show All Genres</option>
+            {% for genre in genres %}
+                <option value="{{ genre[0] }}">{{ genre[0] }}</option>
+            {% endfor %}
+        </select>
+        <div id="edit-instructions">Click a row to edit the entry</div>
+    </div>
+    <div id="table">
+        <table id="results_table">
+            <tr>
+                <th onclick="sortTable(0)">ISBN</th>
+                <th onclick="sortTable(1)">Title &darr;</th>
+                <th onclick="sortTable(2)">Author</th>
+                <th onclick="sortTable(3)">LCNo</th>
+                <th onclick="sortTable(4)">Year</th>
+                <th onclick="filterRead()">Unread</th>
+                <th>Genre</th>
+            </tr>
+            {% for row in book_rows %}
+                <tr onclick="window.location.href='{{ url_for('edit_book', isbn=row[0]) }}'">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] | safe }}</td>
+                <td>{{ row[6] | safe }}</td>
+                </td>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
